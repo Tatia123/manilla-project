@@ -1,0 +1,328 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>კონტაქტი</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous">
+    <!--j-query cdn link-->
+    
+    <link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet" integrity="sha384-wvfXpqpZZVQGK6TAh5PVlGOfQNHSoD2xbE+QkPxCAFlNEevoEH3Sl0sibVcOQVnN" crossorigin="anonymous">
+    <style>
+     * {
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  background: #0A122A;
+}
+
+.hamburger-icon {
+    position: absolute;
+    z-index: 1;
+    top: 5vh;
+    left: 5vw;
+    padding-bottom: 2vh;
+  }
+  
+  .hamburger-icon span {
+    height: 5px;
+    width: 40px;
+    background-color: rgb(138, 121, 73);
+  
+    
+    display: block;
+    margin: 5px 0px 5px 0px;
+    transition: 0.7s ease-in-out;
+    transform: none;
+  }
+  
+
+  #openmenu:checked ~ .menu-pane {
+    left: -5vw;
+    transform: translateX(-5vw);
+  }
+  
+  #openmenu:checked ~ .body-text {
+  display: none;
+  }
+  
+  #openmenu:checked ~ .hamburger-icon span:nth-of-type(2) {
+    transform: translate(0%, 175%) rotate(-45deg);
+    background-color: white;
+  }
+  
+  #openmenu:checked ~ .hamburger-icon span:nth-of-type(3) {
+    transform: rotate(45deg);
+    background-color: white;
+  }
+  
+  #openmenu:checked ~ .hamburger-icon span:nth-of-type(1) {
+    opacity: 0;
+  }
+  
+  #openmenu:checked ~ .hamburger-icon span:nth-of-type(4) {
+    opacity: 0;
+  }
+  
+  div.menu-pane {
+    background-color: #000;
+    position: absolute;
+    transform: translateX(-105vw);
+    transform-origin: (0, 0);
+    width: 100vw;
+    height: 100%;
+    transition: 0.6s ease-in-out;
+    z-index: 10;
+  }
+  
+  .menu-pane p {
+    color: black;
+    font-size: 0.6em;
+  }
+  
+  .menu-pane nav {
+    padding: 10%;
+  }
+  
+  .menu-links li, a, span {
+        transition: 0.5s ease-in-out;
+  }
+  
+  .menu-pane ul {
+    padding: 10%;
+    display: inline-block;
+  }
+  
+  .menu-pane li {
+    padding-top: 20px;
+    padding-bottom: 20px;
+    margin-left: 10px;
+      font-size: 1em;
+  }
+  @media  (max-width:800px) {
+   .menu-pane div.menu-pane{
+    width: 200px;
+  }}
+    
+  
+  .menu li:first-child {
+    font-size: 1.3em;
+    margin-left: -10px;
+  }
+  @media (max-width:800px) {
+    .menu{ width: 200px;}
+  }
+  
+  .menu-links li a {
+    color: white;
+    text-decoration: none;
+  }
+  
+  
+  .menu-links li:hover a {
+    color: rgb(146, 217, 245);
+  }
+  
+  .menu-links li:first-child:hover a {
+    color: black;  
+    background-color: rgb(146, 217, 245);
+  }
+
+  
+  .menu-links li:first-child:hover #QC-info {
+  opacity: 1;
+  }
+  
+  .menu-links li:first-child:hover #DC-info {
+  opacity: 1;
+  }
+  
+  #DC-info {
+    background-color: #FFAB91;
+      border: 2px solid;
+    border-color: #FFAB91;
+  display: block;
+    opacity: 0;
+  }
+  
+  
+  .menu-links li:first-child a {
+    padding: 5px;
+  }
+  @media  (max-width:800px) {
+    .menu-links{
+    width: 150px;
+  }}
+    
+  
+  
+  input.hamburger-checkbox {
+    position: absolute;
+    z-index: 3;
+    top: 5vh;
+    left: 5vw;
+    width: 10vw;
+    opacity: 0;
+    height: 6vh;
+  }
+
+
+
+.wrapper {
+  position: absolute;
+  top: 35%;
+  left: 62%;
+  transform: translate(-50%, -50%);
+  width: 550px;
+}
+
+/* Style the Un-order list by setting its list-style to none */
+.wrapper ul {
+  list-style: none;
+}
+
+.wrapper ul li {
+  width: 75px;
+  height: 75px;
+  line-height: 75px;
+  margin: 0 10px;
+  text-align: center;
+  cursor: pointer;
+  border-radius: 50%;
+  border: 5px solid #D8E2DC;
+  float: left;
+  transition: all 0.5s ease;
+}
+
+.wrapper ul li .fa {
+  color: #D8E2DC;
+  margin-top: 20px;
+  transition: all 0.5s ease;
+}
+
+/*facebook*/
+.wrapper ul li:hover.facebook {
+  border: 5px solid #3b5998;
+  box-shadow: 0 0 15px #3b5998;
+  transition: all 0.5s ease;
+}
+
+.wrapper ul li:hover .fa-facebook {
+  color: #3b5998;
+  text-shadow: 0 0 15px #3b5998;
+  transition: all 0.5s ease;
+}
+
+
+/* instagram */
+.wrapper ul li:hover.instagram {
+  border: 5px solid #bc2a8d;
+  box-shadow: 0 0 15px #bc2a8d;
+  transition: all 0.5s ease;
+}
+
+.wrapper ul li:hover .fa-instagram {
+  color: #bc2a8d;
+  text-shadow: 0 0 15px #bc2a8d;
+  transition: all 0.5s ease;
+}
+
+
+
+/* media queries */
+
+@media screen and (max-width: 640px){
+  .wrapper {
+      width: 350px;
+  }
+  .wrapper ul li{
+      margin-top: 10px;
+  }
+  .wrapper ul li.google{
+      margin-left: 60px;
+  }
+}
+
+
+@media screen and (max-width: 340px){
+  .wrapper {
+      width: 150px;
+  }
+  .wrapper ul li{
+      margin:15px;
+  }
+  .wrapper ul li.google{
+      margin-left: 15px;
+  }
+}
+   h1{
+       color: aliceblue;
+       margin-top: 100px;
+       text-align: center;
+   }
+.footer{
+    text-align:center;
+    color: aliceblue;
+    margin-top: 400px;
+    background-color: black;
+    padding: 15px;
+    font-size: 12px;
+}
+@media screen and (max-width: 640px){
+  h1  {
+      width: 450px;
+  }
+  @media screen and (max-width: 640px){
+  .footer {
+      width: 450px;
+  } 
+    </style>
+</head>
+<body>
+
+  <div class="menu-container">
+    <input type="checkbox" id="openmenu" class="hamburger-checkbox">
+    <div class="hamburger-icon">
+    <label for="openmenu" id="hamburger-label">
+        <span></span>
+        <span></span>
+        <span></span>
+        <span></span>
+        
+        </label>    
+        </div>
+ 
+
+    <div class="menu-pane">
+        <nav>
+        <ul class="menu-links">
+        <li><a href="0.html">ჩვენ შესახებ</a></li>
+        <li><a href="1.html">ქალის საფულე</a></li>
+        <li><a href="2.html">მამაკაცის საფულე</a></li>
+        </ul>
+        <ul class="menu-links">
+        <li> <a href="4.html">აქსესუარები</a></li>
+        <li><a href="index3.html">სამაჯურები</a></li>
+        <li><a href="5.html">კონტაქტი</a></li>
+        </ul>
+        </nav>
+    </div>
+
+<h1>საკონტაქტო მონაცემები:</h1>
+<div class="wrapper">
+  <ul>
+    <li class="facebook"><a href="https://www.facebook.com/search/top?q=%E1%83%9B%E1%83%90%E1%83%9C%E1%83%98%E1%83%9A%E1%83%90%20%E2%80%A2%20manilla">
+      <i class="fa fa-facebook fa-2x" aria-hidden="true"></i></a></li>
+    <li class="instagram"><a href="https://www.instagram.com/manilla_accessories/"><i class="fa fa-instagram fa-2x" aria-hidden="true"></i></a></li>
+  </ul>
+</div>
+<div class="footer">
+სამუშაო საათები: 09:00-22:00 <br>
+    დაგვიკავშირდით ნომერზე:
+    <br>599-**-**-**
+</div>
+</body>
+</html>
